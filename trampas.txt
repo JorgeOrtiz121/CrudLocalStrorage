@@ -1,0 +1,25 @@
+vpn gateway authenticate  using ?
+A. Passowod ; tokens
+B. Certificates; preshared
+C.Certificates; password
+D.Tokens; pre-shared secret
+
+to optimize rule base efficiency the most hit rules should be where?
+a.Removed from Rule Base
+b.Toward the middle of the Rule base
+c.Toward the top of the rule base
+d.Towards the bottom of the Rules Base
+
+If there are two adminitrators logged  in at the same time to the SmarthConsole, and there are objects locked for editing,
+ what must be done to make them avilable to other administrators?
+a.Publish or discard the session 
+b.revert the session
+c.Save and install the policy
+d.delete older versions of database
+
+when you tpload a package or license to tthe appropriate repository in SmatrhUpdate,
+ where is the package or license sotred?
+a.Security Gateway
+b.Check Point user center
+c.Security Management server
+d.SmartConsole installed device

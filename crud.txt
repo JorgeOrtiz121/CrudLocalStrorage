@@ -1,0 +1,58 @@
+
+
+document.getElementById("formulario").addEventListener("submit", function (e) {
+    // Override the default Form behaviour
+    e.preventDefault();
+    const name=document.getElementById("Nombre").value;
+    console.log(name);
+    const apellido=document.getElementById("Apellido").value;
+    console.log(apellido);
+    const edad=document.getElementById("Edad").value;
+    console.log(edad);
+    const profesion=document.getElementById("Profesion").value;
+    console.log(profesion);
+   var listapersonas;
+   if(localStorage.getItem("listapersonas"==null)){
+    listapersonas=[];
+
+   }else if (localStorage.getItem("listapersonas")!=null){
+    listapersonas=JSON.parse(localStorage.getItem("listapersonas"));
+    listapersonas.push({
+        name:name,
+        apellido:apellido,
+        edad:edad,
+        profesion:profesion,
+    });
+    localStorage.setItem("listapersonas",JSON.stringify(listapersonas));
+
+    verpersonajes();
+   }
+
+   
+  });
+
+
+  function verpersonajes(){
+    var listapersonas;
+    if(localStorage.getItem("listapersonas")==null){
+        listapersonas=[];
+        alert("No hay nada");
+        console.log(listapersonas);
+    }else if(localStorage.getItem("listapersonas")!=null){
+        listapersonas=JSON.parse(localStorage.getItem("listapersonas"));
+    }
+    var bloque="";
+    listapersonas.forEach(function(element, index){
+        bloque+="<tr>";
+        bloque+="<td>"+element.name+"</td>";
+        bloque+="<td>"+element.apellido+"</td>";
+        bloque+="<td>"+element.edad+"</td>";
+        bloque+="<td>"+element.profesion+"</td>";
+        bloque+='<td> <button onclick="Delete('+index+')" class="btn btn-danger">Delete</button> <button onclick="Delete('+index+')" class="btn btn-primary">Update</button> </td>';
+        bloque+="</tr>";
+
+    });
+
+    document.querySelector(".table-active").innerHTML=bloque;
+
+  }
